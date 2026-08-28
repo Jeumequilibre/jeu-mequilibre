@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jeu M'équilibre — Innov'à Soin 2026</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #3d3040;
+            background: #faf8fb;
+            line-height: 1.6;
+        }
+
+        /* ===== EN-TÊTE ===== */
+
+        header {
+            background: white;
+            padding: 25px 5%;
+            border-bottom: 1px solid #eee;
+        }
+
+        .logos {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .logos img {
+            max-height: 85px;
+            max-width: 190px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+
+        /* ===== HERO ===== */
+
+        .hero {
+            background: linear-gradient(135deg, #f4edf5, #ffffff);
+            text-align: center;
+            padding: 90px 20px 80px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 7vw, 78px);
+            color: #70466f;
+            margin-bottom: 15px;
+            letter-spacing: -2px;
+        }
+
+        .hero h2 {
+            font-size: clamp(20px, 3vw, 30px);
+            font-weight: 400;
+            color: #6f6170;
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .badge {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 9px 20px;
+            border-radius: 30px;
+            background: #70466f;
+            color: white;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        /* ===== CONTENU ===== */
+
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 70px 20px;
+        }
+
+        section {
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #70466f;
+            font-size: 32px;
+            margin-bottom: 35px;
+        }
+
+        .intro {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+            font-size: 18px;
+            color: #5d535e;
+        }
+
+        /* ===== CARTES ===== */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 5px 25px rgba(80, 50, 80, 0.08);
+            text-align: center;
+        }
+
+        .card h3 {
+            color: #70466f;
+            margin-bottom: 12px;
+        }
+
+        /* ===== VIDÉOS ===== */
+
+        .video-container {
+            margin: 30px auto;
+            max-width: 900px;
+            background: #1f1a20;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+
+        video {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        /* ===== POSTER ===== */
+
+        .poster-container {
+            background: white;
+            padding: 20px;
+            border-radius: 18px;
+            box-shadow: 0 5px 25px rgba(80, 50, 80, 0.08);
+            text-align: center;
+        }
+
+        .poster-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* ===== PIED DE PAGE ===== */
+
+        footer {
+            background: #3d3040;
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        footer .footer-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 35px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        footer img {
+            max-height: 65px;
+            max-width: 150px;
+            object-fit: contain;
+        }
+
+        footer p {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        /* ===== MOBILE ===== */
+
+        @media (max-width: 750px) {
+
+            header {
+                padding: 20px;
+            }
+
+            .logos {
+                justify-content: center;
+                gap: 18px;
+            }
+
+            .logos img {
+                max-height: 55px;
+                max-width: 125px;
+            }
+
+            .hero {
+                padding: 65px 20px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            main {
+                padding: 50px 18px;
+            }
+
+            section {
+                margin-bottom: 60px;
+            }
+
+            .section-title {
+                font-size: 27px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== LOGOS ===== -->
+
+    <header>
+        <div class="logos">
+
+            <!-- Innov'à Soin -->
+            <img src="1.png" alt="Innov'à Soin">
+
+            <!-- Fondation Charles Nicolle -->
+            <img src="2.png" alt="Fondation Charles Nicolle">
+
+            <!-- CHU de Rouen -->
+            <img src="3.png" alt="CHU de Rouen">
+
+            <!-- GHT Rouen Normandie -->
+            <img src="4.png" alt="GHT Rouen Normandie">
+
+            <!-- CH Neufchâtel-en-Bray -->
+            <img src="5.png" alt="Centre Hospitalier de Neufchâtel-en-Bray">
+
+        </div>
+    </header>
+
+
+    <!-- ===== PAGE D'ACCUEIL ===== -->
+
+    <div class="hero">
+
+        <h1>Jeu M'équilibre</h1>
+
+        <h2>
+            Un programme ludique de prévention multifactorielle des chutes
+        </h2>
+
+        <div class="badge">
+            Candidature Innov'à Soin 2026
+        </div>
+
+    </div>
+
+
+    <main>
+
+        <!-- ===== PRÉSENTATION ===== -->
+
+        <section>
+
+            <h2 class="section-title">
+                Notre projet
+            </h2>
+
+            <p class="intro">
+                <strong>Jeu M'équilibre</strong> est un programme thérapeutique
+                ludique destiné aux patients de SMR. Il propose une approche
+                multifactorielle de la prévention des chutes, en associant
+                activité physique, travail de l'équilibre, mobilité et
+                sensibilisation aux facteurs de risque de chute.
+            </p>
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>⚖️ Équilibre</h3>
+                    <p>
+                        Développer les capacités d'équilibre et les stratégies
+                        nécessaires pour sécuriser les déplacements.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>🚶 Mobilité</h3>
+                    <p>
+                        Travailler les capacités fonctionnelles dans des
+                        situations variées et proches du quotidien.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>🎲 Ludique</h3>
+                    <p>
+                        Favoriser l'adhésion et la motivation grâce à une
+                        approche collective et ludique.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===== VIDÉOS ===== -->
+
+        <section>
+
+            <h2 class="section-title">
+                Découvrez le projet
+            </h2>
+
+            <div class="video-container">
+
+                <!-- VIDÉO 1 À AJOUTER ICI -->
+                <video controls playsinline>
+                    <source src="video1.mp4" type="video/mp4">
+                    Votre navigateur ne permet pas de lire cette vidéo.
+                </video>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===== POSTER ===== -->
+
+        <section>
+
+            <h2 class="section-title">
+                Notre poster scientifique
+            </h2>
+
+            <div class="poster-container">
+
+                <!-- POSTER À AJOUTER ICI -->
+                <img src="poster.jpg"
+                     alt="Poster scientifique Jeu M'équilibre">
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ===== FOOTER ===== -->
+
+    <footer>
+
+        <div class="footer-logos">
+
+            <img src="1.png" alt="Innov'à Soin">
+            <img src="3.png" alt="CHU de Rouen">
+            <img src="4.png" alt="GHT Rouen Normandie">
+            <img src="2.png" alt="Fondation Charles Nicolle">
+            <img src="5.png" alt="Centre Hospitalier de Neufchâtel-en-Bray">
+
+        </div>
+
+        <p>
+            Jeu M'équilibre — Candidature Innov'à Soin 2026
+        </p>
+
+    </footer>
+
+</body>
+</html>
