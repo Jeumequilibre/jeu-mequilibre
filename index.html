@@ -109,74 +109,118 @@
 
     /* ===== CARTES ===== */
 
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 40px;
+    align-items: stretch;
+}
+
+.card {
+    background: white;
+    padding: 35px 30px;
+    border-radius: 18px;
+    box-shadow: 0 5px 25px rgba(80, 50, 80, 0.08);
+    text-align: center;
+
+    /* Titre en haut + contenu centré */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    min-height: 340px;
+}
+
+.card h3 {
+    color: #70466f;
+    margin-bottom: 25px;
+    font-size: 21px;
+    line-height: 1.3;
+    min-height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card p {
+    max-width: 300px;
+    color: #5d535e;
+    line-height: 1.6;
+}
+
+/* ===== ENCADRÉ RÉSULTATS ===== */
+
+.card.results {
+    border: 1.5px solid #b88bb8;
+    background: linear-gradient(
+        145deg,
+        #ffffff 0%,
+        #fcf7fc 100%
+    );
+}
+
+.card.results h3 {
+    margin-bottom: 18px;
+}
+
+.result-block {
+    width: 100%;
+    max-width: 310px;
+    padding: 12px 0;
+}
+
+.result-number {
+    display: inline-block;
+    font-size: 34px;
+    font-weight: bold;
+    color: white;
+    background: #70466f;
+    padding: 6px 16px;
+    border-radius: 10px;
+    line-height: 1.2;
+    margin-bottom: 8px;
+}
+
+.result-label {
+    display: block;
+    font-size: 15px;
+    color: #5d535e;
+    line-height: 1.4;
+}
+
+.result-vs {
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #70466f;
+}
+
+.result-separator {
+    width: 55px;
+    height: 2px;
+    background: #d8c5d8;
+    margin: 10px auto;
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 750px) {
+
     .cards {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 25px;
-        margin-top: 40px;
-        align-items: stretch;
+        grid-template-columns: 1fr;
     }
 
     .card {
-        background: white;
-        padding: 35px 28px;
-        border-radius: 18px;
-        box-shadow: 0 5px 25px rgba(80, 50, 80, 0.08);
-        text-align: center;
-
-        /* Centrage horizontal + vertical */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        min-height: 330px;
+        min-height: 280px;
     }
 
     .card h3 {
-        color: #70466f;
-        margin-bottom: 18px;
-        font-size: 21px;
-        line-height: 1.3;
+        min-height: auto;
     }
-
-    .card p {
-        max-width: 290px;
-        color: #5d535e;
-    }
-
-    /* ===== RÉSULTATS ===== */
-
-    .card.results p {
-        margin: 8px 0;
-    }
-
-    .result-number {
-        font-size: 32px;
-        font-weight: bold;
-        color: #70466f;
-        line-height: 1.2;
-    }
-
-    .result-label {
-        font-size: 15px;
-        color: #5d535e;
-        line-height: 1.4;
-    }
-
-    .result-vs {
-        font-size: 15px;
-        font-weight: bold;
-        color: #3d3040;
-    }
-
-    .result-separator {
-        width: 45px;
-        height: 1px;
-        background: #ddd;
-        margin: 14px auto;
-    }
-
+}
     /* ===== VIDÉOS ===== */
 
     .video-container {
