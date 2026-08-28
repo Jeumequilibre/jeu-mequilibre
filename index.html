@@ -7,90 +7,281 @@
     <title>Jeu M'équilibre — Innov'à Soin 2026</title>
 
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            color: #3d3040;
-            background: #faf8fb;
-            line-height: 1.6;
-        }
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        color: #3d3040;
+        background: #faf8fb;
+        line-height: 1.6;
+    }
 
-        /* ===== EN-TÊTE ===== */
+    /* ===== EN-TÊTE ===== */
+
+    header {
+        background: white;
+        padding: 25px 5%;
+        border-bottom: 1px solid #eee;
+    }
+
+    .logos {
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 25px;
+        flex-wrap: wrap;
+    }
+
+    .logos img {
+        max-height: 85px;
+        max-width: 190px;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+    }
+
+    /* ===== HERO ===== */
+
+    .hero {
+        background: linear-gradient(135deg, #f4edf5, #ffffff);
+        text-align: center;
+        padding: 90px 20px 80px;
+    }
+
+    .hero h1 {
+        font-size: clamp(42px, 7vw, 78px);
+        color: #70466f;
+        margin-bottom: 15px;
+        letter-spacing: -2px;
+    }
+
+    .hero h2 {
+        font-size: clamp(20px, 3vw, 30px);
+        font-weight: 400;
+        color: #6f6170;
+        max-width: 850px;
+        margin: auto;
+    }
+
+    .badge {
+        display: inline-block;
+        margin-top: 30px;
+        padding: 9px 20px;
+        border-radius: 30px;
+        background: #70466f;
+        color: white;
+        font-weight: bold;
+        font-size: 15px;
+    }
+
+    /* ===== CONTENU ===== */
+
+    main {
+        max-width: 1100px;
+        margin: auto;
+        padding: 70px 20px;
+    }
+
+    section {
+        margin-bottom: 80px;
+    }
+
+    .section-title {
+        text-align: center;
+        color: #70466f;
+        font-size: 32px;
+        margin-bottom: 35px;
+    }
+
+    .intro {
+        max-width: 850px;
+        margin: auto;
+        text-align: center;
+        font-size: 18px;
+        color: #5d535e;
+    }
+
+    /* ===== CARTES ===== */
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        margin-top: 40px;
+        align-items: stretch;
+    }
+
+    .card {
+        background: white;
+        padding: 35px 28px;
+        border-radius: 18px;
+        box-shadow: 0 5px 25px rgba(80, 50, 80, 0.08);
+        text-align: center;
+
+        /* Centrage horizontal + vertical */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        min-height: 330px;
+    }
+
+    .card h3 {
+        color: #70466f;
+        margin-bottom: 18px;
+        font-size: 21px;
+        line-height: 1.3;
+    }
+
+    .card p {
+        max-width: 290px;
+        color: #5d535e;
+    }
+
+    /* ===== RÉSULTATS ===== */
+
+    .card.results p {
+        margin: 8px 0;
+    }
+
+    .result-number {
+        font-size: 32px;
+        font-weight: bold;
+        color: #70466f;
+        line-height: 1.2;
+    }
+
+    .result-label {
+        font-size: 15px;
+        color: #5d535e;
+        line-height: 1.4;
+    }
+
+    .result-vs {
+        font-size: 15px;
+        font-weight: bold;
+        color: #3d3040;
+    }
+
+    .result-separator {
+        width: 45px;
+        height: 1px;
+        background: #ddd;
+        margin: 14px auto;
+    }
+
+    /* ===== VIDÉOS ===== */
+
+    .video-container {
+        margin: 30px auto;
+        max-width: 900px;
+        background: #1f1a20;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    }
+
+    video {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    /* ===== POSTER ===== */
+
+    .poster-container {
+        background: white;
+        padding: 20px;
+        border-radius: 18px;
+        box-shadow: 0 5px 25px rgba(80, 50, 80, 0.08);
+        text-align: center;
+    }
+
+    .poster-container img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    /* ===== PIED DE PAGE ===== */
+
+    footer {
+        background: #3d3040;
+        color: white;
+        text-align: center;
+        padding: 45px 20px;
+    }
+
+    footer .footer-logos {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 35px;
+        flex-wrap: wrap;
+        margin-bottom: 25px;
+    }
+
+    footer img {
+        max-height: 65px;
+        max-width: 150px;
+        object-fit: contain;
+    }
+
+    footer p {
+        font-size: 14px;
+        opacity: 0.8;
+    }
+
+    /* ===== MOBILE ===== */
+
+    @media (max-width: 750px) {
 
         header {
-            background: white;
-            padding: 25px 5%;
-            border-bottom: 1px solid #eee;
+            padding: 20px;
         }
 
         .logos {
-            max-width: 1200px;
-            margin: auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 25px;
-            flex-wrap: wrap;
+            justify-content: center;
+            gap: 18px;
         }
 
         .logos img {
-            max-height: 85px;
-            max-width: 190px;
-            width: auto;
-            height: auto;
-            object-fit: contain;
+            max-height: 55px;
+            max-width: 125px;
         }
-
-        /* ===== HERO ===== */
 
         .hero {
-            background: linear-gradient(135deg, #f4edf5, #ffffff);
-            text-align: center;
-            padding: 90px 20px 80px;
+            padding: 65px 20px;
         }
 
-        .hero h1 {
-            font-size: clamp(42px, 7vw, 78px);
-            color: #70466f;
-            margin-bottom: 15px;
-            letter-spacing: -2px;
+        .cards {
+            grid-template-columns: 1fr;
         }
 
-        .hero h2 {
-            font-size: clamp(20px, 3vw, 30px);
-            font-weight: 400;
-            color: #6f6170;
-            max-width: 850px;
-            margin: auto;
+        .card {
+            min-height: 280px;
         }
-
-        .badge {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 9px 20px;
-            border-radius: 30px;
-            background: #70466f;
-            color: white;
-            font-weight: bold;
-            font-size: 15px;
-        }
-
-        /* ===== CONTENU ===== */
 
         main {
-            max-width: 1100px;
-            margin: auto;
-            padding: 70px 20px;
+            padding: 50px 18px;
         }
 
         section {
-            margin-bottom: 80px;
+            margin-bottom: 60px;
         }
+
+        .section-title {
+            font-size: 27px;
+        }
+    }
+</style>
 
         .section-title {
             text-align: center;
